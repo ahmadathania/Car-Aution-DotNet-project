@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User.master.cs" Inherits="User" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <style type="text/css">
+        /* Vertical menu item spacing */
+        .menu-vertical .level1 {
+            margin-top: 7px !important;
+            padding: 15px !important;
+        }
+
+        /* Horizontal menu item spacing */
+        .menu-horizontal .level1 {
+            margin-right: 20px !important;
+            padding: 20px !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table>
+            <tr>
+                <td colspan="2" style="height: 83px">
+                    <span style="font-size: 30px; color: #ff9900">
+                        <span style="font-size: 15px">
+                            <img src="Icons/automart.jpg" /><br />
+                            welcome
+                            :- 
+                            <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="Label"></asp:Label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click" ForeColor="#FF8000">Logout</asp:LinkButton>
+
+                            <!-- Horizontal Menu -->
+                            <asp:Menu ID="Menu2" runat="server" CssClass="menu-horizontal" Height="31px" Width="1022px" BackColor="Black" ForeColor="#FFFFFF" OnMenuItemClick="Menu1_MenuItemClick" Orientation="Horizontal" Font-Names="Calibri">
+                                <DynamicMenuStyle BackColor="#33CDFF" />
+                                <Items>
+                                    <asp:MenuItem Text="Used Cars" Value="New Item" NavigateUrl="~/ViewMobiles.aspx" />
+                                    <asp:MenuItem Text="Search" Value="New Item" NavigateUrl="~/Searchmob.aspx" />
+                                    <asp:MenuItem Text="Accessories" Value="New Item" NavigateUrl="~/user_accessories.aspx" />
+                                    <asp:MenuItem Text="My Profile" Value="New Item">
+                                        <asp:MenuItem Text="Edit My Profile" Value="Edit My Profile" NavigateUrl="~/user_upadatestart.aspx" />
+                                        <asp:MenuItem Text="Delete My Account" Value="Delete My Account" NavigateUrl="~/DelAc.aspx" />
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/ViewPurchased.aspx" Text="View Purchased" Value="View Purchased" />
+                                </Items>
+                            </asp:Menu>
+                        </span></span>
+                    <img src="Icons/topb.jpg" />
+                </td>
+                <td colspan="1" style="height: 83px"></td>
+            </tr>
+            <tr>
+                <!-- Vertical Menu -->
+                <td style="width: 100px; height: 248px; background-color: #cc0000;" valign="top">
+                    <asp:Menu ID="Menu1" runat="server" CssClass="menu-vertical" Height="273px" Width="168px" BackColor="#33CDFF" ForeColor="AliceBlue" OnMenuItemClick="Menu1_MenuItemClick" style="background-image: url(Icons/left-.jpg)" Font-Bold="False" Font-Names="Tahoma">
+                        <DynamicMenuStyle BackColor="#FF8000" />
+                        <Items>
+                            <asp:MenuItem Text="View cars" Value="New Item" NavigateUrl="~/ViewAutoMobiles.aspx" />
+                            <asp:MenuItem Text="Auction" Value="New Item" NavigateUrl="~/SelectAuction.aspx" />
+                            <asp:MenuItem Text="Recently Purchased" Value="New Item" NavigateUrl="~/Mycart.aspx" />
+                            <asp:MenuItem Text="My profile" Value="My profile">
+                                <asp:MenuItem NavigateUrl="~/user_upadatestart.aspx" Text="Edit My Profile" Value="Edit My Profile" />
+                                <asp:MenuItem NavigateUrl="~/DelAc.aspx" Text="Delete My Account" Value="Delete My Account" />
+                            </asp:MenuItem>
+                        </Items>
+                        <DynamicMenuItemStyle BackColor="#33CDFF" />
+                    </asp:Menu>
+                </td>
+                <td style="width: 876px; height: 248px" valign="top">
+                    <asp:contentplaceholder id="ContentPlaceHolder1" runat="server" />
+                </td>
+                <td style="width: 876px; height: 248px"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 4px">
+                    &nbsp;<img src="Icons/topb.jpg" />
+                </td>
+                <td colspan="1" style="height: 4px"></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

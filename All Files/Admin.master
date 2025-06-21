@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+    <style type="text/css">
+        .menu-style .level1 {
+            margin-top: 10px !important;
+            padding: 15px !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table>
+            <tr>
+                <td colspan="2" style="height: 70px">
+                    <span style="font-size: 30px; color: #ff9900">
+                        <span style="font-size: 15px">
+                            <img src="Icons/automart.jpg" /><br />
+                            welcome :- <span style="color: #003366">Administrator
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                            </span>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 28px; background-color: black"></td>
+            </tr>
+            <tr>
+                <td style="width: 69px; height: 414px;" valign="top">
+                    <asp:Menu ID="Menu1" runat="server" Height="433px"
+                        Width="250px" BackColor="#DC2276" ForeColor="#FFFFFF"
+                        CssClass="menu-style"
+                        style="background-image: url(Icons/test_left.jpg); background-repeat: no-repeat; background-attachment: scroll;"
+                        Font-Names="Tahoma">
+                        <Items>
+                            <asp:MenuItem Text="Add New Cars" Value="Add New Mobiles" NavigateUrl="~/UploadMobiles.aspx" />
+                            <asp:MenuItem Text="View Products" Value="View items">
+                                <asp:MenuItem Text="SoldCars" NavigateUrl="~/Viewsold.aspx" />
+                                <asp:MenuItem NavigateUrl="~/Admin.aspx" Text="Veiw All " />
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Auction" Value="Auction">
+                                <asp:MenuItem Text="Final Auction" Value="Final Auction" />
+                                <asp:MenuItem NavigateUrl="~/Auction.aspx" Text="Add to Auction" />
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Update Product" Value="Update Product">
+                                <asp:MenuItem Text="Remove Product" NavigateUrl="~/deltprod.aspx" />
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="View Customers" NavigateUrl="~/ViewCus.aspx" />
+                            <asp:MenuItem Text="Update Profile">
+                                <asp:MenuItem NavigateUrl="~/Chngpwd.aspx" Text="Change Password" />
+                            </asp:MenuItem>
+                        </Items>
+                        <DynamicMenuStyle BackColor="#DC2276" />
+                    </asp:Menu>
+                </td>
+                <td style="width: 877px; height: 414px;" valign="top">
+                    <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                        <img src="Icons/topbar.jpg" style="width: 768px" />
+                    </asp:contentplaceholder>
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #000000;" colspan="2">
+                    <img src="Icons/topbar.jpg" style="width: 942px" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
